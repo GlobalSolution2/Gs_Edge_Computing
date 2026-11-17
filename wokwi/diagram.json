@@ -1,0 +1,363 @@
+{
+  "version": 1,
+  "author": "Equipe GS CitizenTech - Daniel, Felipe, Jecky e Felipi",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 24,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht",
+      "top": -182.1,
+      "left": -303,
+      "attrs": {
+        "temperature": "23",
+        "humidity": "50"
+      }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr",
+      "top": 0,
+      "left": -320,
+      "attrs": {
+        "lux": "500"
+      }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "noise",
+      "top": 190.7,
+      "left": -297.8,
+      "attrs": {
+        "value": "250"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "m1in",
+      "top": -176,
+      "left": 340,
+      "attrs": {
+        "color": "green",
+        "label": "Mesa 1 +",
+        "key": "1",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "m1out",
+      "top": -176,
+      "left": 445,
+      "attrs": {
+        "color": "red",
+        "label": "Mesa 1 -",
+        "key": "2",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "m2in",
+      "top": -36,
+      "left": 340,
+      "attrs": {
+        "color": "green",
+        "label": "Mesa 2 +",
+        "key": "3",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "m2out",
+      "top": -36,
+      "left": 445,
+      "attrs": {
+        "color": "red",
+        "label": "Mesa 2 -",
+        "key": "4",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "m3in",
+      "top": 102.2,
+      "left": 336,
+      "attrs": {
+        "color": "green",
+        "label": "Mesa 3 +",
+        "key": "5",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "m3out",
+      "top": 104,
+      "left": 445,
+      "attrs": {
+        "color": "red",
+        "label": "Mesa 3 -",
+        "key": "6",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rg",
+      "top": 350,
+      "left": 10,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "ry",
+      "top": 350,
+      "left": 110,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rr",
+      "top": 350,
+      "left": 210,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "green",
+      "top": 430,
+      "left": 15,
+      "attrs": {
+        "color": "green",
+        "label": "Adequado"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "yellow",
+      "top": 430,
+      "left": 115,
+      "attrs": {
+        "color": "yellow",
+        "label": "Atencao"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "red",
+      "top": 430,
+      "left": 215,
+      "attrs": {
+        "color": "red",
+        "label": "Critico / erro"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:TX",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "dht:VCC",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "dht:SDA",
+      "esp:27",
+      "green",
+      []
+    ],
+    [
+      "dht:GND",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "ldr:VCC",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "ldr:AO",
+      "esp:35",
+      "yellow",
+      []
+    ],
+    [
+      "ldr:GND",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "noise:VCC",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "noise:SIG",
+      "esp:34",
+      "blue",
+      []
+    ],
+    [
+      "noise:GND",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "m1in:1.l",
+      "esp:13",
+      "green",
+      []
+    ],
+    [
+      "m1in:2.l",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "m1out:1.l",
+      "esp:14",
+      "orange",
+      []
+    ],
+    [
+      "m1out:2.l",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "m2in:1.l",
+      "esp:16",
+      "green",
+      []
+    ],
+    [
+      "m2in:2.l",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "m2out:1.l",
+      "esp:17",
+      "orange",
+      []
+    ],
+    [
+      "m2out:2.l",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "m3in:1.l",
+      "esp:18",
+      "green",
+      []
+    ],
+    [
+      "m3in:2.l",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "m3out:1.l",
+      "esp:19",
+      "orange",
+      []
+    ],
+    [
+      "m3out:2.l",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "esp:21",
+      "rg:1",
+      "green",
+      []
+    ],
+    [
+      "rg:2",
+      "green:A",
+      "green",
+      []
+    ],
+    [
+      "green:C",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "esp:22",
+      "ry:1",
+      "yellow",
+      []
+    ],
+    [
+      "ry:2",
+      "yellow:A",
+      "yellow",
+      []
+    ],
+    [
+      "yellow:C",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "esp:23",
+      "rr:1",
+      "red",
+      []
+    ],
+    [
+      "rr:2",
+      "red:A",
+      "red",
+      []
+    ],
+    [
+      "red:C",
+      "esp:GND.2",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}

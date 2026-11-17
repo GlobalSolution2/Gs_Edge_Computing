@@ -1,0 +1,15 @@
+Global Solution 2026.2 - CitizenTech
+Edge Computing & Computer Systems
+Projeto: StudyComfort
+
+Equipe:
+Daniel Roberto
+Felipe Pedrol
+Jecky Cossio
+Felipi Godoy
+
+Simulacao no Wokwi:
+https://wokwi.com/projects/480352166150085633
+
+Video da apresentacao no YouTube:
+https://youtu.be/MziTbxpFiXo
